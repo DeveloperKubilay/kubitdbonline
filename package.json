@@ -1,0 +1,45 @@
+{
+  "name": "kubitdbonline",
+  "version": "1.0.4",
+  "description": "Online Database Üstelik Hem Türkçe Hem İngilizce KubitDBonline",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "keywords": [
+    "db",
+    "kubit.db",
+    "kubit-db",
+    "kubit.dbonline",
+    "kubit-dbonline",
+    "kubitdbonline",
+    "kubitdb",
+    "database",
+    "DataBase",
+    "kubitdb",
+    "kubit",
+    "jsondata",
+    "json",
+    "databases",
+    "fs",
+    "jsonfolder",
+    "türkçe",
+    "türkçe database",
+    "tr database",
+    "tr db",
+    "en db",
+    "online data",
+    "online database",
+    "mongodb",
+    "mongoose",
+    "mongo db",
+    "kubitdb online",
+    "public database"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@kubilaytr",
+  "license": "MIT"
+}

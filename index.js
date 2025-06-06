@@ -1,92 +1,108 @@
-//Modül version 1.0.4
-
-//Modül MİT lisanslıdır
-//axios modülünün yardımı ile çalışmaktadır ve bu modülün sahibi: Discord kubi#5443
-//Hatamı alıyorsun konsola npm i axios yazmayı dene
-//Hala hatamı alıyorsun Yardım sunucumuza gel https://discord.gg/4Xpwwz6pgN
-//İyi günler İyi kodlamalar :)
+//If you're getting an error, try typing 'npm i axios' in the console
+//Good day and happy coding :)
 
 const fetch = require('axios')
+
 module.exports = class kubitdbonline {
-constructor(urlcik,sifre){
-this.url = urlcik
-if(!this.url) throw new TypeError("KubitDB online\nUrl girmediniz\nYou did not enter the url\n" + __dirname)
-this.sifre = sifre
-if(!this.sifre) throw new TypeError("KubitDB online\nŞifre girmediniz\nYou did not enter a password\n" + __dirname)
-}
+    constructor(urlcik, sifre) {
+        this.url = urlcik
+        if (!this.url) throw new TypeError("KubitDB online: You did not enter the url\n" + __dirname)
+        this.sifre = sifre
+        if (!this.sifre) throw new TypeError("KubitDB online: You did not enter a password\n" + __dirname)
+    }
+    
+    // Set functions
+    set(veri, deger) {
+        if (!veri || !deger) return;
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "set", deger1: veri, deger2: deger }).catch(() => { return; })
+        return;
+    }
+    
+    ayarla(veri, deger) {
+        return this.set(veri, deger);
+    }
 
-set(veri, deger) {
-if (!veri || !deger) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"set",deger1:veri,deger2:deger}).catch(() => {return;})
-return;}
-ayarla(veri, deger) {
-if (!veri || !deger) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"set",deger1:veri,deger2:deger}).catch(() => {return;})
-return;}
+    // Get functions
+    get() {
+        const api = fetch.get(`${this.url}/kubitdbonlineall/` + this.sifre).then(res => res.data).catch(() => { return {} })
+        return api;
+    }
+    
+    fetch() {
+        return this.get();
+    }
+    
+    al() {
+        return this.get();
+    }
+    
+    bak() {
+        return this.get();
+    }
 
-fetch () {
-const api = fetch.get(`${this.url}/kubitdbonlineall/`+this.sifre).then(res=>res.data).catch(() => {return{}})
-return api}
-get() {
-const api = fetch.get(`${this.url}/kubitdbonlineall/`+this.sifre).then(res=>res.data).catch(() => {return{}})
-return api;}
-al() {
-const api = fetch.get(`${this.url}/kubitdbonlineall/`+this.sifre).then(res=>res.data).catch(() => {return{}})
-return api;}
-bak() {
-const api = fetch.get(`${this.url}/kubitdbonlineall/`+this.sifre).then(res=>res.data).catch(() => {return{}})
-return api;}
+    // Delete functions
+    delete(veri) {
+        if (!veri) return;
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "delete", deger1: veri }).catch(() => { return; })
+        return;
+    }
+    
+    del(veri) {
+        return this.delete(veri);
+    }
+    
+    sil(veri) {
+        return this.delete(veri);
+    }
 
-sil(veri) {
-if (!veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"delete",deger1:veri}).catch(() => {return;})
-return;}
-delete(veri) {
-if (!veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"delete",deger1:veri}).catch(() => {return;})
-return;}
-del(veri) {
-if (!veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"delete",deger1:veri}).catch(() => {return;})
-return;}
+    // Subtract functions
+    subtract(veri, miktar) {
+        if (!miktar || !veri) return;
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "subtract", deger1: veri, deger2: miktar }).catch(() => { return; })
+        return;
+    }
+    
+    cıkar(veri, miktar) {
+        return this.subtract(veri, miktar);
+    }
 
-cıkar(veri,miktar) {
-if(!miktar || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"subtract",deger1:veri,deger2:miktar}).catch(() => {return;})
-return;}
-subtract(veri,miktar) {
-if(!miktar || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"subtract",deger1:veri,deger2:miktar}).catch(() => {return;})
-return;}
+    // Push functions
+    push(veri, deger) {
+        if (!deger || !veri) return;
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "push", deger1: veri, deger2: deger }).catch(() => { return; })
+        return;
+    }
+    
+    it(veri, deger) {
+        return this.push(veri, deger);
+    }
 
-it(veri,deger) {
-if (!deger || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"push",deger1:veri,deger2:deger}).catch(() => {return;})
-return;}
-push(veri,deger) {
-if (!deger || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"push",deger1:veri,deger2:deger}).catch(() => {return;})
-return;}
+    // Add functions
+    add(veri, deger) {
+        if (!deger || !veri) return;
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "add", deger1: veri, deger2: Number(deger) }).catch(() => { return; })
+        return;
+    }
+    
+    ekle(veri, deger) {
+        return this.add(veri, deger);
+    }
 
-ekle(veri,deger) {
-if (!deger || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"add",deger1:veri,deger2:Number(deger)}).catch(() => {return;})
-return;}
-add(veri,deger) {
-if (!deger || !veri) return;
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"add",deger1:veri,deger2:Number(deger)}).catch(() => {return;})
-return;}
-
-temizle() {
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"clear"}).catch(() => {})
-return;}
-clearAll() {
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"clear"}).catch(() => {})
-return;}
-deleteAll() {
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"clear"}).catch(() => {})
-return;}
-clear() {
-fetch.post(`${this.url}/kubitdbonline`,{parola:this.sifre,yapilcak:"clear"}).catch(() => {})
-return;}
+    // Clear functions
+    clear() {
+        fetch.post(`${this.url}/kubitdbonline`, { parola: this.sifre, yapilcak: "clear" }).catch(() => { })
+        return;
+    }
+    
+    clearAll() {
+        return this.clear();
+    }
+    
+    deleteAll() {
+        return this.clear();
+    }
+    
+    temizle() {
+        return this.clear();
+    }
 }

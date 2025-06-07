@@ -9,7 +9,7 @@ const requestLimit = "1mb"
 const databaseFileName = "kubitdbonline"
 const port = 80
 
-const { kubitdb } = require('kubitdb')
+const kubitdb = require('kubitdb')
 const db = new kubitdb(databaseFileName)
 const express = require('express')
 const app = express()

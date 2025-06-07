@@ -4,7 +4,7 @@
 
 ## Opening a server
 ```js
-const password = "sifre"
+const password = "password123"
 const requestLimit = "1mb"
 const databaseFileName = "kubitdbonline"
 const port = 80
@@ -38,7 +38,7 @@ app.post('/kubitdbonline', function (req, res) {
 ## Connecting to the server
 ```js
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 ```
 
 ## Fetching data from server (al, bak, get, fetch)
@@ -49,7 +49,7 @@ db.get()
 db.fetch()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.al().then(kubitdb => {
   console.log(kubitdb) // get all data
   console.log(kubitdb["elma"]) // you can change "elma"
@@ -65,7 +65,7 @@ db.get()
 db.fetch()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 
 db.al().then(kubitdb => {
   var has;
@@ -85,7 +85,7 @@ db.ayarla()
 db.set()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.ayarla("elma", "yok") 
 ```
 ### OUTPUT:
@@ -102,7 +102,7 @@ db.delete()
 db.del()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.sil("elma") 
 ```
 ### OUTPUT:
@@ -118,7 +118,7 @@ db.deleteAll()
 db.clearAll()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.temizle()
 ```
 ### OUTPUT:
@@ -133,7 +133,7 @@ db.cıkar()
 db.subtract()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.cıkar("elma", 1) 
 ```
 ### OUTPUT:
@@ -150,7 +150,7 @@ db.it()
 db.push()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.it("elma", "deneme")
 ```
 ### OUTPUT:
@@ -173,7 +173,7 @@ db.ekle()
 db.add()
 
 const kubitdbonline = require('kubitdbonline')
-const db = new kubitdbonline("https://slyhterindashboard.cf", "sifre")
+const db = new kubitdbonline("https://slyhterindashboard.cf", "password123")
 db.ekle("elma", 1)
 ```
 ### OUTPUT:

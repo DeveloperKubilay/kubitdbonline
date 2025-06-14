@@ -1,7 +1,7 @@
 {
   "name": "kubitdbonline",
-  "version": "1.0.4",
-  "description": "Online Database Üstelik Hem Türkçe Hem İngilizce KubitDBonline",
+  "version": "1.0.6",
+  "description": "Online Database Available in Both Turkish and English - KubitDBonline",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.27.2"
